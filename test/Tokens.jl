@@ -1,4 +1,4 @@
-using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon, ParenthesisLeft, ParenthesisRight, BracketsLeft, BracketsRight, BracesLeft, BracesRight, Keyword, Number
+using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon, ParenthesisLeft, ParenthesisRight, BracketsLeft, BracketsRight, BracesLeft, BracesRight, Plus, Minus, Asterisk, Slash, GreaterThan, LessThan, Equal, At, Exclamation, Question, Keyword, Number
 
 @testset "Tokens" verbose = true begin
     @testset "Newline" begin
@@ -56,6 +56,46 @@ using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon,
         @test startswith("{", pattern(BracesLeft))
         @test startswith("}", pattern(BracesRight))
         @test startswith("{1,2,3}", pattern(BracesLeft))
+    end
+
+    @testset "Plus" begin
+        @test startswith("+", pattern(Plus))
+    end
+
+    @testset "Minus" begin
+        @test startswith("-", pattern(Minus))
+    end
+
+    @testset "Asterisk" begin
+        @test startswith("*", pattern(Asterisk))
+    end
+
+    @testset "Slash" begin
+        @test startswith("/", pattern(Slash))
+    end
+
+    @testset "GreaterThan" begin
+        @test startswith(">", pattern(GreaterThan))
+    end
+
+    @testset "LessThan" begin
+        @test startswith("<", pattern(LessThan))
+    end
+
+    @testset "Equal" begin
+        @test startswith("=", pattern(Equal))
+    end
+
+    @testset "At" begin
+        @test startswith("@", pattern(At))
+    end
+
+    @testset "Exclamation" begin
+        @test startswith("!", pattern(Exclamation))
+    end
+
+    @testset "Question" begin
+        @test startswith("?", pattern(Question))
     end
 
     @testset "Number" begin
