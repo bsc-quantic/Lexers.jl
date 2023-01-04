@@ -25,6 +25,7 @@ using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon,
 
     @testset "Dot" begin
         @test startswith(".", pattern(Dot))
+        @test startswith(".24", pattern(Dot))
     end
 
     @testset "Comma" begin
