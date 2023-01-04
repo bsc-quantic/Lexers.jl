@@ -43,6 +43,8 @@ const BracesLeft = Punctuation{'{'}
 const BracesRight = Punctuation{'}'}
 const Plus = Punctuation{'+'}
 const Minus = Punctuation{'-'}
+const Asterisk = Punctuation{'*'}
+const Slash = Punctuation{'/'}
 const GreaterThan = Punctuation{'>'}
 const LessThan = Punctuation{'<'}
 const Equal = Punctuation{'='}
