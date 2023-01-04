@@ -21,7 +21,7 @@ pattern(::Type{Newline}) = Regex(String(['\n']))
 Represents a whitespace.
 """
 struct Whitespace <: Token end
-pattern(::Type{Whitespace}) = r"\s"
+pattern(::Type{Whitespace}) = r" "
 
 """
 	Punctuation{S}
