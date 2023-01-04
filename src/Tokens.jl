@@ -13,7 +13,7 @@ function pattern end
 Represents a newline.
 """
 struct Newline <: Token end
-pattern(::Type{Newline}) = '\n'
+pattern(::Type{Newline}) = Regex(String(['\n']))
 
 """
 	Whitespace
@@ -21,7 +21,7 @@ pattern(::Type{Newline}) = '\n'
 Represents a whitespace.
 """
 struct Whitespace <: Token end
-pattern(::Type{Whitespace}) = ' '
+pattern(::Type{Whitespace}) = r"\s"
 
 """
 	Punctuation{S}
@@ -29,7 +29,7 @@ pattern(::Type{Whitespace}) = ' '
 Represents a punctuation mark.
 """
 struct Punctuation{S} <: Token end
-pattern(::Type{Punctuation{S}}) where {S} = S
+pattern(::Type{Punctuation{S}}) where {S} = Regex(String(['\\', S]))
 
 const Dot = Punctuation{'.'}
 const Comma = Punctuation{','}
