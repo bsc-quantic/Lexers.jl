@@ -41,6 +41,14 @@ const BracketsLeft = Punctuation{'['}
 const BracketsRight = Punctuation{']'}
 const BracesLeft = Punctuation{'{'}
 const BracesRight = Punctuation{'}'}
+const Plus = Punctuation{'+'}
+const Minus = Punctuation{'-'}
+const GreaterThan = Punctuation{'>'}
+const LessThan = Punctuation{'<'}
+const Equal = Punctuation{'='}
+const At = Punctuation{'@'}
+const Exclamation = Punctuation{'!'}
+const Question = Punctuation{'?'}
 
 """
 	Keyword{S}
