@@ -71,6 +71,8 @@ struct Number <: Token
     data::Int
 end
 
+Number(x::AbstractString) = Number(parse(Int, x))
+
 pattern(::Type{Number}) = r"(\d+)"
 
 """
