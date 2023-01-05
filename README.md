@@ -23,11 +23,11 @@ In order to _lex_ or _tokenize_ a code string, call the `tokenize` function.
 > NOTE: This code result is not yet loyal to reality.
 ```julia
 julia> tokenize(Brainfuck, "[->+<]")
-6-element Vector{Token}:
- "[": Bracket left
- ">": Greater than
- "+": Plus
- "-": Minus
- "<": Less than
- "]": Bracket right
+6-element Vector{Tuple{Token, SubString}}:
+ "[" => Brackets left
+ "-" => Minus
+ ">" => Greater than
+ "+" => Plus
+ "<" => Less than
+ "]" => Brackets right
 ```
