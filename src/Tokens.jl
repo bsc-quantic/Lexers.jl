@@ -15,8 +15,6 @@ function Base.show(io::IO, ::MIME"text/plain", tokens::Vector{Tuple{Token,SubStr
     println(io, "$(summary(tokens)):")
     for (token, substr) in tokens
         name = replace(tokenname(typeof(token)), r"([a-z])([A-Z])" => s"\1 \2") |> lowercase |> uppercasefirst
-
-
         println(io, " \"$substr\" => $name")
     end
 end
