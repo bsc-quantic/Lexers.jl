@@ -4,7 +4,7 @@
 
 `Lexers` is a Julia library for easy implementation of lexers (aka _tokenizers_).
 
-It has no dependencies and works with Julia 1.6 onwards.
+It has no dependencies and works from Julia 1.6 onwards.
 
 ## Usage
 
