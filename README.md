@@ -20,6 +20,7 @@ Brainfuck = Lexer{Tuple{GreaterThan, LessThan, Plus, Minus, Dot, Comma, Brackets
 where `GreaterThan`, `LessThan`, `Plus`, ... are token types.
 
 In order to _lex_ or _tokenize_ a code string, call the `tokenize` function.
+> NOTE: This code result is not yet loyal to reality.
 ```julia
 julia> tokenize(Brainfuck, "[->+<]")
 6-element Vector{Token}:
