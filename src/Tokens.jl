@@ -14,7 +14,9 @@ end
 function Base.show(io::IO, ::MIME"text/plain", tokens::Vector{<:Token})
     println(io, "$(summary(tokens)):")
     for token in tokens
-        println(io, " $(tokenname(typeof(token)))")
+        name = replace(tokenname(typeof(token)), r"([a-z])([A-Z])" => s"\1 \2") |> lowercase |> uppercasefirst
+
+        println(io, " $name")
     end
 end
 
