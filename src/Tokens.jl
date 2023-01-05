@@ -11,8 +11,8 @@ function tokenname(@nospecialize(T::Type{<:Token}))
     end
 end
 
-function Base.show(io::IO, tokens::Vector{<:Token})
-    println(io, summary(tokens))
+function Base.show(io::IO, ::MIME"text/plain", tokens::Vector{<:Token})
+    println(io, "$(summary(tokens)):")
     for token in tokens
         println(io, " $(tokenname(typeof(token)))")
     end
