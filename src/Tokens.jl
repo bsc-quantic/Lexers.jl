@@ -11,12 +11,13 @@ function tokenname(@nospecialize(T::Type{<:Token}))
     end
 end
 
-function Base.show(io::IO, ::MIME"text/plain", tokens::Vector{<:Token})
+function Base.show(io::IO, ::MIME"text/plain", tokens::Vector{Tuple{Token,SubString}})
     println(io, "$(summary(tokens)):")
-    for token in tokens
+    for (token, substr) in tokens
         name = replace(tokenname(typeof(token)), r"([a-z])([A-Z])" => s"\1 \2") |> lowercase |> uppercasefirst
 
-        println(io, " $name")
+
+        println(io, " \"$substr\" => $name")
     end
 end
 
@@ -87,12 +88,7 @@ pattern(::Type{Keyword{S}}) where {S} = S
 
 Represents a natural number.
 """
-struct Number <: Token
-    data::Int
-end
-
-Number(x::AbstractString) = Number(parse(Int, x))
-
+struct Number <: Token end
 pattern(::Type{Number}) = r"(\d+)"
 
 """
@@ -100,8 +96,5 @@ pattern(::Type{Number}) = r"(\d+)"
 
 Represents a string literal.
 """
-struct Quote <: Token
-    data::String
-end
-
+struct Quote <: Token end
 pattern(::Type{Quote}) = r"\"([\w\s\d]*)\""
