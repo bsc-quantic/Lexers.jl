@@ -1,5 +1,23 @@
 abstract type Token end
 
+istypealias(@nospecialize(x::Type)) = !isnothing(Base.make_typealias(x))
+
+function tokenname(@nospecialize(T::Type{<:Token}))
+    if istypealias(T)
+        aliasname = Base.make_typealias(T) |> first |> x -> x.name |> String
+        return aliasname
+    else
+        "$(T.name.name)"
+    end
+end
+
+function Base.show(io::IO, tokens::Vector{<:Token})
+    println(io, summary(tokens))
+    for token in tokens
+        println(io, " $(tokenname(typeof(token)))")
+    end
+end
+
 """
 	pattern(T)
 
