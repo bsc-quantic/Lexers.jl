@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/bsc-quantic/Lexers.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/bsc-quantic/Lexers.jl/actions/workflows/CI.yml)
 [![codecov](https://codecov.io/gh/bsc-quantic/Lexers.jl/branch/master/graph/badge.svg?token=RRULC0TRV8)](https://codecov.io/gh/bsc-quantic/Lexers.jl)
+[![Aqua QA](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
 
 `Lexers` is a Julia library for easy implementation of lexers (aka _tokenizers_).
 
