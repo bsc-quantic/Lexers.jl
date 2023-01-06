@@ -1,6 +1,6 @@
 module Lexers
 
-include("Tokens.jl")
+include("Token.jl")
 export Token, pattern, Newline, Whitespace, Tab, Keyword, Quote, Natural, Identifier
 export Glyph, Dot, Comma, Colon, Semicolon, ParenthesisLeft, ParenthesisRight, BracketLeft, BracketRight, BraceLeft, BraceRight, Plus, Minus, Asterisk, Slash, GreaterThan, LessThan, Equal, At, Exclamation, Question
 
