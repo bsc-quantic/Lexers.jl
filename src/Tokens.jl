@@ -99,12 +99,12 @@ Keyword(x::AbstractString) = Keyword{tuple(x...)}
 pattern(::Type{Keyword{S}}) where {S} = S
 
 """
-	Number
+	Natural
 
 Represents a natural number.
 """
-struct Number <: Token end
-pattern(::Type{Number}) = r"(\d+)"
+struct Natural <: Token end
+pattern(::Type{Natural}) = r"(\d+)"
 
 """
 	Quote

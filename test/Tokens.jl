@@ -1,4 +1,4 @@
-using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon, ParenthesisLeft, ParenthesisRight, BracketLeft, BracketRight, BraceLeft, BraceRight, Plus, Minus, Asterisk, Slash, GreaterThan, LessThan, Equal, At, Exclamation, Question, Keyword, Number
+using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon, ParenthesisLeft, ParenthesisRight, BracketLeft, BracketRight, BraceLeft, BraceRight, Plus, Minus, Asterisk, Slash, GreaterThan, LessThan, Equal, At, Exclamation, Question, Keyword, Natural
 
 @testset "Tokens" verbose = true begin
     @testset "Newline" begin
@@ -98,9 +98,9 @@ using Lexers: pattern, Newline, Whitespace, Quote, Dot, Comma, Colon, Semicolon,
         @test startswith("?", pattern(Question))
     end
 
-    @testset "Number" begin
-        @test startswith("0", pattern(Number))
-        @test !startswith("a", pattern(Number))
+    @testset "Natural" begin
+        @test startswith("0", pattern(Natural))
+        @test !startswith("a", pattern(Natural))
     end
 
     @testset "Keywords" begin

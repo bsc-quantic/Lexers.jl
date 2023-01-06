@@ -1,23 +1,23 @@
-using Lexers: Token, Lexer, tokenize, ParenthesisLeft, ParenthesisRight, Plus, Minus, Asterisk, Slash, Number, Dot
+using Lexers: Token, Lexer, tokenize, ParenthesisLeft, ParenthesisRight, Plus, Minus, Asterisk, Slash, Natural, Dot
 
 @testset "Calculator" begin
-    Calculator = Lexer{Tuple{ParenthesisLeft,ParenthesisRight,Plus,Minus,Asterisk,Slash,Number,Dot}}
+    Calculator = Lexer{Tuple{ParenthesisLeft,ParenthesisRight,Plus,Minus,Asterisk,Slash,Natural,Dot}}
 
     @test tokenize(Calculator, "4+3") == [
-        (Number(), "4"),
+        (Natural(), "4"),
         (Plus(), "+"),
-        (Number(), "3"),
+        (Natural(), "3"),
     ]
 
     @test tokenize(Calculator, "1/2*(5+3)") == [
-        (Number(), "1"),
+        (Natural(), "1"),
         (Slash(), "/"),
-        (Number(), "2"),
+        (Natural(), "2"),
         (Asterisk(), "*"),
         (ParenthesisLeft(), "("),
-        (Number(), "5"),
+        (Natural(), "5"),
         (Plus(), "+"),
-        (Number(), "3"),
+        (Natural(), "3"),
         (ParenthesisRight(), ")"),
     ]
 end
