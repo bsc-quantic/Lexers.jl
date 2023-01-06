@@ -2,3 +2,6 @@ name = "Lexers"
 uuid = "6bcc0789-44bc-4f47-9004-c8ca82614e89"
 authors = ["Sergio Sánchez Ramírez <sergio.sanchez.ramirez@bsc.es>"]
 version = "0.3.0"
+
+[compat]
+julia = "1.2"
