@@ -96,3 +96,11 @@ Represents a string literal.
 """
 struct Quote <: Token end
 pattern(::Type{Quote}) = r"\"([\w\s\d]*)\""
+
+"""
+    Identifier
+
+Represents an identifier such as a variable or function name.
+"""
+struct Identifier <: Token end
+pattern(::Type{Identifier}) = r"([_\w][_\w\s]*)"
