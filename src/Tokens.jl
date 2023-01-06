@@ -43,6 +43,14 @@ struct Whitespace <: Token end
 pattern(::Type{Whitespace}) = r" "
 
 """
+    Tab
+
+Represents a tab space.
+"""
+struct Tab <: Token end
+pattern(::Type{Tab}) = r"\t"
+
+"""
 	Punctuation{S}
 
 Represents a punctuation mark.
