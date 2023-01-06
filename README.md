@@ -25,7 +25,7 @@ In order to _lex_ or _tokenize_ a code string, call the `tokenize` function.
 > NOTE: This code result is not yet loyal to reality.
 ```julia
 julia> tokenize(Brainfuck, "[->+<]")
-6-element Vector{Tuple{Token, SubString}}:
+6-element Vector{Lexeme{T, SubString{String}} where T<:Token}:
  "[" => Brackets left
  "-" => Minus
  ">" => Greater than
