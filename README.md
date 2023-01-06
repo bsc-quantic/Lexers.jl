@@ -15,7 +15,7 @@ For example, a minimal lexer for the [Brainfuck](https://esolangs.org/wiki/Brain
 ```julia
 using Lexers
 
-Brainfuck = Lexer{Tuple{GreaterThan, LessThan, Plus, Minus, Dot, Comma, BracketsLeft, BracketsRight}}
+Brainfuck = Lexer{Tuple{GreaterThan, LessThan, Plus, Minus, Dot, Comma, BracketLeft, BracketRight}}
 ```
 
 where `GreaterThan`, `LessThan`, `Plus`, ... are token types.
