@@ -2,8 +2,8 @@ abstract type Lexer{L<:Tuple} end
 
 parameters(::Type{Lexer{L}}) where {L} = L.parameters
 
-function tokenize(T::Type{Lexer{_}}, stream::AbstractString) where {_}
-    tokens = Tuple{Token,SubString}[]
+function tokenize(T::Type{Lexer{TokenList}}, stream::S) where {TokenList,S<:AbstractString}
+    lexemes = Vector{Lexeme{T,SubString{S}} where T<:Token}()
     streamview = @view stream[1:end]
 
     while !isempty(streamview)
@@ -13,10 +13,10 @@ function tokenize(T::Type{Lexer{_}}, stream::AbstractString) where {_}
         matched = match(pattern(token), streamview)
         substr = @view streamview[1:length(matched.match)]
 
-        push!(tokens, (token(), substr))
+        push!(lexemes, Lexeme{token}(substr))
         streamview = @view streamview[length(matched.match)+1:end]
     end
 
-    return tokens
+    return lexemes
 end
 
