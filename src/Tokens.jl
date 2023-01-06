@@ -51,33 +51,33 @@ struct Tab <: Token end
 pattern(::Type{Tab}) = r"\t"
 
 """
-	Punctuation{S}
+	Glyph{S}
 
-Represents a punctuation mark.
+Represents a single-character glyph, `S`, such as typographycal symbols, punctuation marks, mathematical operators, ...
 """
-struct Punctuation{S} <: Token end
-pattern(::Type{Punctuation{S}}) where {S} = Regex(String(['\\', S]))
+struct Glyph{S} <: Token end
+pattern(::Type{Glyph{S}}) where {S} = Regex(String(['\\', S]))
 
-const Dot = Punctuation{'.'}
-const Comma = Punctuation{','}
-const Colon = Punctuation{':'}
-const Semicolon = Punctuation{';'}
-const ParenthesisLeft = Punctuation{'('}
-const ParenthesisRight = Punctuation{')'}
-const BracketsLeft = Punctuation{'['}
-const BracketsRight = Punctuation{']'}
-const BracesLeft = Punctuation{'{'}
-const BracesRight = Punctuation{'}'}
-const Plus = Punctuation{'+'}
-const Minus = Punctuation{'-'}
-const Asterisk = Punctuation{'*'}
-const Slash = Punctuation{'/'}
-const GreaterThan = Punctuation{'>'}
-const LessThan = Punctuation{'<'}
-const Equal = Punctuation{'='}
-const At = Punctuation{'@'}
-const Exclamation = Punctuation{'!'}
-const Question = Punctuation{'?'}
+const Dot = Glyph{'.'}
+const Comma = Glyph{','}
+const Colon = Glyph{':'}
+const Semicolon = Glyph{';'}
+const ParenthesisLeft = Glyph{'('}
+const ParenthesisRight = Glyph{')'}
+const BracketsLeft = Glyph{'['}
+const BracketsRight = Glyph{']'}
+const BracesLeft = Glyph{'{'}
+const BracesRight = Glyph{'}'}
+const Plus = Glyph{'+'}
+const Minus = Glyph{'-'}
+const Asterisk = Glyph{'*'}
+const Slash = Glyph{'/'}
+const GreaterThan = Glyph{'>'}
+const LessThan = Glyph{'<'}
+const Equal = Glyph{'='}
+const At = Glyph{'@'}
+const Exclamation = Glyph{'!'}
+const Question = Glyph{'?'}
 
 """
 	Keyword{S}
