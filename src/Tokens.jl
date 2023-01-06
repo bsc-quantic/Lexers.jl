@@ -58,26 +58,35 @@ Represents a single-character glyph, `S`, such as typographycal symbols, punctua
 struct Glyph{S} <: Token end
 pattern(::Type{Glyph{S}}) where {S} = Regex(String(['\\', S]))
 
-const Dot = Glyph{'.'}
-const Comma = Glyph{','}
-const Colon = Glyph{':'}
-const Semicolon = Glyph{';'}
-const ParenthesisLeft = Glyph{'('}
-const ParenthesisRight = Glyph{')'}
-const BracketLeft = Glyph{'['}
-const BracketRight = Glyph{']'}
+const Asterisk = Glyph{'*'}
+const At = Glyph{'@'}
+const BackSlash = Glyph{'\\'}
 const BraceLeft = Glyph{'{'}
 const BraceRight = Glyph{'}'}
-const Plus = Glyph{'+'}
-const Minus = Glyph{'-'}
-const Asterisk = Glyph{'*'}
-const Slash = Glyph{'/'}
-const GreaterThan = Glyph{'>'}
-const LessThan = Glyph{'<'}
+const BracketLeft = Glyph{'['}
+const BracketRight = Glyph{']'}
+const Caret = Glyph{'^'}
+const Colon = Glyph{':'}
+const Comma = Glyph{','}
+const Dot = Glyph{'.'}
 const Equal = Glyph{'='}
-const At = Glyph{'@'}
 const Exclamation = Glyph{'!'}
+const GreaterThan = Glyph{'>'}
+const Hyphen = Glyph{'-'}
+const InvertedQuestion = Glyph{'¡'}
+const InvertedExclamation = Glyph{'?'}
+const LessThan = Glyph{'<'}
+const Minus = Hyphen
+const ParenthesisLeft = Glyph{'('}
+const ParenthesisRight = Glyph{')'}
+const Percent = Glyph{'%'}
+const Plus = Glyph{'+'}
+const Pipe = Glyph{'|'}
 const Question = Glyph{'?'}
+const Semicolon = Glyph{';'}
+const Slash = Glyph{'/'}
+const Tilde = Glyph{'~'}
+const Underscore = Glyph{'_'}
 
 """
 	Keyword{S}
